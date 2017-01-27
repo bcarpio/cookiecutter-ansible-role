@@ -24,7 +24,8 @@ please see CONTRIBUTING.rst
 Testing the role
 ----------------
 
-This role is tested with [Test-Kitchen](https://github.com/test-kitchen/test-kitchen) configured with the [kitchen-docker](https://github.com/test-kitchen/kitchen-docker) driver.
+This role is tested with [Test-Kitchen](https://github.com/test-kitchen/test-kitchen) configured with the [kitchen-docker](https://github.com/test-kitchen/kitchen-docker) driver,
+and [kitchen-inspec](https://github.com/chef/kitchen-inspec)
 
 Dependencies
 ~~~~~~~~~~~~
