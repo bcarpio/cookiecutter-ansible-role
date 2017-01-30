@@ -9,14 +9,14 @@
 Usage
 -----
 
-ansible-galaxy install {{ cookiecutter.role_name }}
+`ansible-galaxy install {{ cookiecutter.role_name }}`
 
 LICENSE: 3-clause BSD license.
 
 CONTRIBUTING
 ------------
 
-git clone git@github.com:{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}
+`git clone git@github.com:{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}`
 
 please see CONTRIBUTING.rst
 
@@ -34,7 +34,7 @@ Dependencies
 - Ruby, 2.3.0+
 - Docker, 1.13.0+
 
-Setup
+Run tests
 ~~~~~
 
 1. Install Bundler: `gem install bundler`
