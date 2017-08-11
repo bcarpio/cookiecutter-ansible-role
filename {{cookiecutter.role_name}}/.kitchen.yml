@@ -20,7 +20,7 @@ provisioner:
   require_chef_for_busser: false
 
 platforms:
-  - name: {{cookiecutter.platform}}-{{cookiecutter.version}}
+  - name: {{cookiecutter.platform_name}}-{{cookiecutter.platform_version}}
     driver_config:
       network:
       - ['forwarded_port', {guest: {{cookiecutter.port}}, host: {{cookiecutter.port}}}]
