@@ -1,13 +1,16 @@
 {
-  "full_name": "Marco Ferrari",
-  "email": "ferrari.marco@gmail.com",
-  "role_name": "Super.Role",
-  "github_user": "ferrarimarco",
-  "repo_name": "ansible-super-role",
+  "full_name": "Brian Carpio",
+  "email": "brian.carpio@xentaurs.com",
+  "role_name": "Example.Role",
+  "github_user": "xentaurs",
+  "repo_name": "ansible_example_role",
   "short_description": "This Ansible Role infuses antigravity, you are warned",
-  "release_date": "2017-02-17",
+  "release_date": "2017-08-17",
   "year": "2017",
   "version": "0.0.1",
   "min_ansible_version": "2.2",
-  "allow_duplicates": "no"
+  "driver": "vagrant",
+  "platform_name": "centos",
+  "platform_version": "7.3",
+  "forwarded_ports": "9200"
 }
