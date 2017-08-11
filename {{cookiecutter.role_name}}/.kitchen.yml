@@ -23,7 +23,7 @@ platforms:
   - name: {{cookiecutter.platform_name}}-{{cookiecutter.platform_version}}
     driver_config:
       network:
-      - ['forwarded_port', {guest: {{cookiecutter.port}}, host: {{cookiecutter.port}}}]
+      - ['forwarded_port', {guest: {{cookiecutter.forwarded_port}}, host: {{cookiecutter.forwarded_port}}}]
 
 verifier:
   name: serverspec

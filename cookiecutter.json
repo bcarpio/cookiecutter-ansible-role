@@ -12,5 +12,5 @@
   "driver": "vagrant",
   "platform_name": "centos",
   "platform_version": "7.3",
-  "forwarded_ports": "9200"
+  "forwarded_port": "9200"
 }
