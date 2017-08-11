@@ -12,7 +12,7 @@ provisioner:
   http_proxy: <%= ENV['HTTP_PROXY'] %>
   https_proxy: <%= ENV['HTTPS_PROXY'] %>
   no_proxy: localhost,127.0.0.1
-  requirements_path: requirements.yml
+  #requirements_path: requirements.yml
   require_ansible_repo: true
   ansible_verbose: true
   ansible_verbosity: 2
