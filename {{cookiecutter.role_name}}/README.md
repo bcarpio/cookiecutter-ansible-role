@@ -1,8 +1,5 @@
 # Ansible Role: {{cookiecutter.role_name}}
 
-* Development branch: [![Build Status](https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}.svg?branch=development)](https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}})
-* Master branch: [![Build Status](https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}.svg?branch=master)](https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}})
-
 {{cookiecutter.short_description}}
 
 ## Using the role

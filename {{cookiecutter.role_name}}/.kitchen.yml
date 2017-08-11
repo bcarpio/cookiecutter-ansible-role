@@ -1,38 +1,36 @@
+#
+#
 ---
 driver:
-  name: docker
-  require_chef_omnibus: false
-  require_ruby_for_busser: false
-  use_sudo: false
-
-platforms:
-  - name: ubuntu-14.04
-    driver_config:
-      image: ubuntu:14.04
-      platform: ubuntu
-  - name: ubuntu-16.04
-    driver_config:
-      image: ubuntu:16.04
-      platform: ubuntu
+  name: {{cookiecutter.driver}}
 
 provisioner:
-  ansible_connection: local
-  ansible_host_key_checking: false
-  ansible_version: latest
   name: ansible_playbook
-  hosts: test-kitchen
-  idempotency_test: true
+  hosts: localhost
   require_ansible_repo: true
+  ansible_verbose: true
+  http_proxy: <%= ENV['HTTP_PROXY'] %>
+  https_proxy: <%= ENV['HTTPS_PROXY'] %>
+  no_proxy: localhost,127.0.0.1
+  requirements_path: requirements.yml
+  require_ansible_repo: true
+  ansible_verbose: true
+  ansible_verbosity: 2
+  ansible_diff: true
   require_chef_for_busser: false
-  require_ruby_for_busser: false
-  role_name: {{cookiecutter.role_name}}
-  roles_path: .
+
+platforms:
+  - name: {{cookiecutter.platform}}-{{cookiecutter.version}}
+    driver_config:
+      network:
+      - ['forwarded_port', {guest: {{cookiecutter.port}}, host: {{cookiecutter.port}}}]
+
+verifier:
+  name: serverspec
+  sudo_path: true
 
 suites:
   - name: default
-
-transport:
-  max_ssh_sessions: 6
-
-verifier:
-  name: inspec
+    verifier:
+      patterns:
+        - roles/{{cookiecutter.role}}/test/integration/serverspec/*_spec.rb

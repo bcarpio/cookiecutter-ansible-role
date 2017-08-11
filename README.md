@@ -11,17 +11,15 @@ project that I used as a starting point.
 1. Only Creates the necessary files and folders
 1. Blazing fast creation, forget about file creation and focus in actions
 1. Lint checks ([Ansible-lint](https://github.com/willthames/ansible-lint), [yamllint](https://github.com/adrienverge/yamllint))
-1. Test infrastructure already implemented ([Test-kitchen](https://github.com/test-kitchen/test-kitchen), [kitchen-ansible](https://github.com/neillturner/kitchen-ansible), [kitchen-docker](https://github.com/test-kitchen/kitchen-docker), [InSpec](http://inspec.io/) + [kitchen-inspec](https://github.com/chef/kitchen-inspec)):
-  1. Test your roles against multiple platforms using the power of Docker
+1. Test infrastructure already implemented ([Test-kitchen](https://github.com/test-kitchen/test-kitchen), [kitchen-ansible](https://github.com/neillturner/kitchen-ansible), [kitchen-vagrant](https://github.com/test-kitchen/kitchen-vagrant), [ServerSpec](http://serverspec.org/) + [kitchen-verifier-serverspec](https://github.com/neillturner/kitchen-verifier-serverspec)):
+  1. Test your roles against multiple platforms using the power of Docker or Vagrant
   1. The life cycle of each platform is automatically managed by Test-kitchen
-  1. Your roles can be verified with InSpec
-1. Travis-CI integration ready, with support for parallel builds: ([.travis.yml]({{cookiecutter.role_name}}/.travis.yml), [badges in README.md for development and master branches]({{cookiecutter.role_name}}/README.md))
-1. Parallel test execution ready ([{{cookiecutter.role_name}}/test/scripts/test-role.sh]({{cookiecutter.role_name}}/test/scripts/test-role.sh))
+  1. Your roles can be verified with ServerSpec
 
 ## Usage
 
 1. Install [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/installation.html#install-cookiecutter): `pip install cookiecutter`
-1. `cookiecutter https://github.com/ferrarimarco/cookiecutter-ansible-role`
+1. `cookiecutter https://github.com/XENTAURS/cookiecutter-ansible-role.git`
 
 It will ask you questions about the structure of your role like tasks names, handlers names, and default variables. You can jump to the next question by entering an empty string.
 
@@ -46,7 +44,7 @@ See [README.md of the generated role]({{cookiecutter.role_name}}/README.md).
 
     It should contain default variables?:  [Y/n]
       Add variable i.e (operator: : drunken_master) var: name
-      Add variable i.e (operator: : drunken_master)      
+      Add variable i.e (operator: : drunken_master)
 
     Should it have meta info?  [Y/n]
      - Should it have dependencies?  [Y/n]
