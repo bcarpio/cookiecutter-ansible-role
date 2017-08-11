@@ -32,43 +32,34 @@ See [README.md of the generated role]({{cookiecutter.role_name}}/README.md).
     ROLE CONFIGURATION:
     ===================
 
-    Should it have tasks?  [Y/n]
-      Add task name i.e (Install packages) Add some task
-      Add task name i.e (Install packages) another task
-      Add task name i.e (Install packages)
+    Is it okay to delete and re-clone it?  [Y/n]
 
-    Should it have handlers? [Y/n]
-      Add handler name i.e (Restart uwsgi) restart something
-      Add handler name i.e (Restart uwsgi) alert someone
-      Add handler name i.e (Restart uwsgi)
+    full_name? [Your Name]
 
-    It should contain default variables?:  [Y/n]
-      Add variable i.e (operator: : drunken_master) var: name
-      Add variable i.e (operator: : drunken_master)
+    email?:  [Email]
 
-    Should it have meta info?  [Y/n]
-     - Should it have dependencies?  [Y/n]
-        Add dependency i.e ({role: aptsupercow, var: 'value'}) {role: cool, version: latest}
-        Add dependency i.e ({role: aptsupercow, var: 'value'})
+    role_name?:  [role_name]
 
-    Should it have templates?  [Y/n] n
+    github_user?:  [user]
 
-    Should it have files?  [Y/n] y
+    repo_name?: [repo_name]
+
+    short_description?: [ Some Description ]
+
+    release_date?: [ 2017-08-17]
+
+    year?: [ 2017 ]
+
+    version?: [ 1.0.0 ]
+
+    min_ansible_version?: [ 2.2 ]
+
+    driver?: [ vagrant | docker ]
+
+    platform_name?: [ centos | Ubuntu ]
+
+    platform_version?: [ 7.3 | 16.04 ]
+
+    forwarded_port?: [ 9200 ]
 
 ```
-
-## What is the rationale behind this fork?
-
-While developing roles, I always wanted to test them in an ephemeral environment.
-
-In my first role, I just ran a quick syntax check using the `--syntax-check` switch. Then I came across [this blog post](https://www.jeffgeerling.com/blog/testing-ansible-roles-travis-ci-github) by [Jeff Geerling](https://github.com/geerlingguy) and I was able to use his approach to use Travis CI to run my role against different platforms (via Docker), while also testing the its idempotence.
-
-That methodology had a limitation: running tests on my local Docker environment was cumbersome and not practical as the process had too many "copy-and-paste-from-.travis.yml" steps. I managed to mitigate this issue to a certain extent by moving commands from `.travis.yml` to dedicated shell scripts (that you can now find in the `test/scripts` directory).
-
-This partially solved the issue but the `.travis.yml` still contained the environment variables that described the platforms to run against (i.e. the Docker containers). So I still had some manual steps to tackle.
-
-Then I stumbled upon [Test-Kitchen](https://github.com/test-kitchen/test-kitchen). It's a testing framework with a plug-in interface. You can use it with various combinations of drivers (Docker, Vagrant...), provisioners (Ansible, Chef, Puppet...) and verifiers (RSpec, Serverspec, InSpec...). This completely abstracts the test environment from the "test runtime" environment, in the sense that you can run the same set of tests against different platforms, no matter the environment you use to run such tests. But wait, couldn't you just use plain docker for that? Yes, but you have to manage the life cycle of the test environments by yourself.
-
-## Examples of roles generated with this cookiecutter
-- https://github.com/ferrarimarco/ansible-role-bash-aliases
-- https://github.com/ferrarimarco/ansible-role-virtualbox
