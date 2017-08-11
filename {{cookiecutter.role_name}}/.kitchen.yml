@@ -33,4 +33,4 @@ suites:
   - name: default
     verifier:
       patterns:
-        - roles/{{cookiecutter.role}}/test/integration/serverspec/*_spec.rb
+        - roles/{{cookiecutter.role_name}}/test/integration/serverspec/*_spec.rb
