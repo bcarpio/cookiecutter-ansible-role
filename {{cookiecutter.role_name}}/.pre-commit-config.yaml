@@ -1,0 +1,15 @@
+---
+repos:
+  - repo: https://github.com/willthames/ansible-lint.git
+    sha: v3.4.15
+    hooks:
+      - id: ansible-lint
+        files: \.(yaml|yml)$
+        args:
+          - -xANSIBLE0006,ANSIBLE0010,ANSIBLE0012,ANSIBLE0013
+          - --force-color
+  - repo: https://github.com/adrienverge/yamllint.git
+    sha: v1.8.1
+    hooks:
+      - id: yamllint
+        files: \.(yaml|yml)$
