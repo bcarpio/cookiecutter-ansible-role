@@ -14,6 +14,8 @@ provisioner:
   ansible_verbosity: 2
   ansible_diff: true
   require_chef_for_busser: false
+  ssh_known_hosts:
+    - github.com
 
 platforms:
   - name: {{cookiecutter.platform_name}}-{{cookiecutter.platform_version}}
@@ -30,3 +32,6 @@ suites:
     verifier:
       patterns:
         - roles/{{cookiecutter.role_name}}/test/integration/serverspec/*_spec.rb
+transport:
+  max_ssh_sessions: 6
+  forward_agent: true
