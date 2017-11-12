@@ -8,6 +8,16 @@
 ansible-galaxy install {{ cookiecutter.role_name }}
 ```
 
+### Installing The pre-commit hooks
+```
+pre-commit install
+```
+
+### Running pre-commit hooks
+```
+pre-commit run -a
+```
+
 ### Example Playbook
 ```
   - hosts: all
